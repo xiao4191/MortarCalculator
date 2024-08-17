@@ -1,0 +1,9 @@
+Mortar\Main\MortarCalculatorApp.class
+Mortar\DB\DBSupport.class
+Mortar\Service\CalculatorService.class
+Mortar\Util\InputValidator.class
+Mortar\Model\AmmunitionType.class
+Mortar\Model\MortarData.class
+Mortar\Servlet\MortarCalculatorServlet.class
+Mortar\Model\MortarType.class
+Mortar\Controller\MortarCalculatorController.class

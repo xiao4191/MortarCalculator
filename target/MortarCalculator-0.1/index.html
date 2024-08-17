@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mortar Calculator</title>
+    </head>
+
+    <body>
+        <h1>Mortar Calculator</h1>
+
+        <h2>Mortar and Ammunition Information</h2>
+        <table>
+            <tr>
+                <th>Mortar Type</th>
+                <th>Min Elevation</th>
+                <th>Max Elevation</th>
+                <th>Min Range</th>
+                <th>Max Range</th>
+            </tr>
+            <tr>
+                <td>60mm M224A1</td>
+                <td>800</td>
+                <td>1511</td>
+                <td>70</td>
+                <td>3490</td>
+            </tr>
+            <tr>
+                <td>81mm M252A1</td>
+                <td>800</td>
+                <td>1515</td>
+                <td>83</td>
+                <td>5844</td>
+            </tr>
+            <tr>
+                <td>120mm Mortar System</td>
+                <td>710</td>
+                <td>1510</td>
+                <td>200</td>
+                <td>7200</td>
+            </tr>
+        </table>
+
+        <table id="DataTable">
+            <tr>
+                <th>Select</th>
+                <th>Mortar Type</th>
+                <th>Ammunition Type</th>
+                <th>Min Elevation</th>
+                <th>Max Elevation</th>
+                <th>Min Range</th>
+                <th>Max Range</th>
+                <th>Firing Range</th>
+                <th>Elevation (mils)</th>
+            </tr>
+        </table>
+
+        <table id="resultTable">
+            <tr>
+                <th>Parameter</th>
+                <th>Selected Value</th>
+            </tr>
+            <tr>
+                <td>Mortar Type</td>
+                <td id="selectedMortar"></td>
+            </tr>
+            <tr>
+                <td>Ammunition Type</td>
+                <td id="selectedAmmo"></td>
+            </tr>
+            <tr>
+                <td>Firing Range</td>
+                <td id="selectedRange"></td>
+            </tr>
+            <tr>
+                <td>Calculated Elevation</td>
+                <td id="result"></td>
+            </tr>
+        </table>
+
+        <form id="mortarDataForm" action="/MortarCalculator/Calculator" method="post">
+            <label for="mortarType">Select Mortar Type:</label>
+            <select id="mortarType" name="mortarType" onchange="updateAmmoOptions()" required></select>
+
+            <label for="ammoType">Select Ammunition Type:</label>
+            <select id="ammoType" name="ammunitionType" required></select>
+
+            <label for="firingRange">Enter Firing Range (in meters):</label>
+            <input type="number" id="firingRange" name="firingRange" required>            
+
+            <button type="submit" id="calculate" name="action" value="calculate">Calculate Elevation</button>
+            <button type="button" id="saveData" onclick="handleSaveData()">Save Data</button>
+            <button type="button" id="deleteData" onclick="handleDeleteData()">Delete Data</button>
+
+        </form>
+
+        <script type="text/javascript" src="Script/script.js"></script>
+        <link rel="stylesheet" type="text/css" href="Style/style.css">
+
+    </body>
+</html>
